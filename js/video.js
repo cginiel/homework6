@@ -12,11 +12,11 @@ function getVid(){
 
 function playVid() { 
 
-	let vol = document.querySelector("#volume") 
+	let vol = document.querySelector("#volume"); 
 	vol.innerHTML = video.volume * 100 + "%";
 	// .innerHTML is your new best friend
 	console.log("Play Video");
-	// console.log(video);
+	console.log(video.volume);
 	video.play();
 
 } 
@@ -24,12 +24,13 @@ function playVid() {
 function pauseVid() { 
 
 	console.log("Pause Video");
-	video.pause() 
+	video.pause(); 
 } 
 
 function decreaseSpeed() { 
 	video.playbackRate *= .8;
   	console.log("Speed is " + video.playbackRate);
+  	// "this.value" for objects in javascript
 } 
 
 function increaseSpeed() {
@@ -47,26 +48,33 @@ function mute() {
   	if (video.muted){
   		console.log("Change to Unmuted");
   		video.muted = false;
-  		mute.innerHTML = "Mute"
+  		mute.innerHTML = "Mute";
   	}
   	else{
   		console.log("Change to Muted");
   		video.muted = true;
-  		mute.innerHTML = "Unmute"
+  		mute.innerHTML = "Unmute";
   	}      	
 }
 
-// function changeVolume() {
-// ;	console.log("Volume is ");
-// }
+function changeVolume() {
+	let slider = document.querySelector("#volumeSlider");
+	let vol = document.querySelector("#volume");
+	slider.innerHTML = vol
+	console.log("Volume is "+ slider.innerHTML);
+}
        
 
-// function gray() { 
+function gray() {
+	document.querySelector("#myVideo").style.filter = "grayscale(100%)";
 
-// 	console.log("In grayscale")
-// }
+	console.log("In grayscale")
+}
 
-// function color() {
+// ask if this is an appropriate method to achieve grayscale and color
 
-// 	console.log("In color") 
-// }
+function color() {
+	document.querySelector("#myVideo").style.filter = "none";
+
+	console.log("In color") 
+}
