@@ -22,7 +22,6 @@ function playVid() {
 } 
 
 function pauseVid() { 
-
 	console.log("Pause Video");
 	video.pause(); 
 } 
@@ -69,21 +68,18 @@ function changeVolume() {
 	// volume slider value so that it updates accordingly
 
 	let slider = document.querySelector("#volumeSlider");
-	// let vol = document.querySelector("#volume");
-	// slider.innerHTML = vol
-	// video.slider = vol;
-	console.log("Volume is "+ video.slider);
-}
-       
+	let vol = document.querySelector("#volume");
+	video.volume = slider.value/100;
+	vol.innerHTML = slider.value + "%";
+	console.log("Volume is "+ slider.value);
+}       
 
 function gray() {
 	document.querySelector("#myVideo").style.filter = "grayscale(100%)";
-
 	console.log("In grayscale");
 }
 
 function color() {
 	document.querySelector("#myVideo").style.filter = "none";
-
 	console.log("In color");
 }
