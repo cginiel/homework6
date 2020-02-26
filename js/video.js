@@ -40,7 +40,14 @@ function increaseSpeed() {
 
 function skipAhead() {
 	video.currentTime += 60;
-	console.log("Current location is "+ video.currentTime);
+	
+    if (video.currentTime >= video.duration){
+    	console.log("Video ended")
+    	video.currentTime = 0;
+    	video.playbackRate = 1;
+    	console.log("Video playing")
+    }
+    console.log("Current location is "+ video.currentTime);
 } 
 
 function mute() { 
@@ -58,24 +65,25 @@ function mute() {
 }
 
 function changeVolume() {
-	// let slider = document.querySelector("#volumeSlider");
-	let vol = document.querySelector("#volume");
+	// pseudocode: we want to connect the "volume is" value to the 
+	// volume slider value so that it updates accordingly
+
+	let slider = document.querySelector("#volumeSlider");
+	// let vol = document.querySelector("#volume");
 	// slider.innerHTML = vol
-	video.volume = vol
-	console.log("Volume is "+ video.volume);
+	// video.slider = vol;
+	console.log("Volume is "+ video.slider);
 }
        
 
 function gray() {
 	document.querySelector("#myVideo").style.filter = "grayscale(100%)";
 
-	console.log("In grayscale")
+	console.log("In grayscale");
 }
-
-// ask if this is an appropriate method to achieve grayscale and color
 
 function color() {
 	document.querySelector("#myVideo").style.filter = "none";
 
-	console.log("In color") 
+	console.log("In color");
 }
