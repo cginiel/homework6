@@ -38,10 +38,10 @@ function increaseSpeed() {
 	console.log("Speed is "+ video.playbackRate);
 } 
 
-// function skipAhead() {
-
-// 	console.log("Current location is "+ );
-// } 
+function skipAhead() {
+	video.currentTime += 60;
+	console.log("Current location is "+ video.currentTime);
+} 
 
 function mute() { 
 	let mute = document.querySelector("#mute")
@@ -58,10 +58,11 @@ function mute() {
 }
 
 function changeVolume() {
-	let slider = document.querySelector("#volumeSlider");
+	// let slider = document.querySelector("#volumeSlider");
 	let vol = document.querySelector("#volume");
-	slider.innerHTML = vol
-	console.log("Volume is "+ slider.innerHTML);
+	// slider.innerHTML = vol
+	video.volume = vol
+	console.log("Volume is "+ video.volume);
 }
        
 
