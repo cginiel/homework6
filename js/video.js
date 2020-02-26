@@ -11,7 +11,6 @@ function getVid(){
 }
 
 function playVid() { 
-
 	let vol = document.querySelector("#volume"); 
 	vol.innerHTML = video.volume * 100 + "%";
 	// .innerHTML is your new best friend
@@ -50,7 +49,7 @@ function skipAhead() {
 } 
 
 function mute() { 
-	let mute = document.querySelector("#mute")
+	let mute = document.querySelector("#mute");
   	if (video.muted){
   		console.log("Change to Unmuted");
   		video.muted = false;
