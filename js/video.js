@@ -74,11 +74,11 @@ function changeVolume() {
 }       
 
 function gray() {
-	document.querySelector("#myVideo").style.filter = "grayscale(100%)";
+	document.querySelector("#myVideo").classList.add("grayscale");
 	console.log("In grayscale");
 }
 
 function color() {
-	document.querySelector("#myVideo").style.filter = "none";
+	document.querySelector("#myVideo").classList.remove("grayscale");
 	console.log("In color");
 }
